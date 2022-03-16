@@ -34,9 +34,12 @@ $api.interceptors.response.use(
     ) {
       originalRequest.retry = true;
       try {
-        const response = await axios.get("http://localhost:3001/api/refresh", {
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          "https://greencosmic-api.vercel.app/api/refresh",
+          {
+            withCredentials: true,
+          }
+        );
 
         store.dispatch(refreshToken(response.data));
         store.dispatch(isAuth(true));

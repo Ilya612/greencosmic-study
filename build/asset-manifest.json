@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.35373377.chunk.css",
+    "main.js": "/static/js/main.d2798ee1.chunk.js",
+    "main.js.map": "/static/js/main.d2798ee1.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.9e4b7630.js",
+    "runtime-main.js.map": "/static/js/runtime-main.9e4b7630.js.map",
+    "static/js/2.105e2d1a.chunk.js": "/static/js/2.105e2d1a.chunk.js",
+    "static/js/2.105e2d1a.chunk.js.map": "/static/js/2.105e2d1a.chunk.js.map",
+    "static/js/3.9db0729f.chunk.js": "/static/js/3.9db0729f.chunk.js",
+    "static/js/3.9db0729f.chunk.js.map": "/static/js/3.9db0729f.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.35373377.chunk.css.map": "/static/css/main.35373377.chunk.css.map",
+    "static/js/2.105e2d1a.chunk.js.LICENSE.txt": "/static/js/2.105e2d1a.chunk.js.LICENSE.txt",
+    "static/media/mark_email_read_black_24dp.74418ed0.svg": "/static/media/mark_email_read_black_24dp.74418ed0.svg",
+    "static/media/marketing.1261a813.svg": "/static/media/marketing.1261a813.svg",
+    "static/media/preloader.9dd581ae.gif": "/static/media/preloader.9dd581ae.gif",
+    "static/media/profile.0ab04cc9.svg": "/static/media/profile.0ab04cc9.svg",
+    "static/media/relax.ebc855a3.svg": "/static/media/relax.ebc855a3.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9e4b7630.js",
+    "static/js/2.105e2d1a.chunk.js",
+    "static/css/main.35373377.chunk.css",
+    "static/js/main.d2798ee1.chunk.js"
+  ]
+}
