@@ -8,6 +8,7 @@ function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showError, setShowError] = useState(false);
+  console.log(showError);
   return (
     <div className={style.container}>
       <div className={style.customContainer}>
