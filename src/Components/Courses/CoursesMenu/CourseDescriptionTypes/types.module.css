@@ -1,0 +1,14 @@
+.blockContainer {
+  display: flex;
+  justify-content: center;
+}
+.blockName {
+  border-radius: em;
+  margin: 1em;
+  font-size: 3em;
+  font-weight: bold;
+}
+.blockContent {
+  margin-left: 3em;
+  font-size: 20px;
+}

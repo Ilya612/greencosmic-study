@@ -1,0 +1,163 @@
+.container {
+  grid-area: workspace_main;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+.coursesContainer {
+  display: flex;
+  justify-content: start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.courseName {
+  margin-bottom: 1em;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  background-color: blueviolet;
+  border-radius: 0em 1em 1em 0em;
+  border: solid 3px;
+  border-color: black;
+  border-left: none;
+  color: white;
+}
+.courseName:hover {
+  transition: 0.3s color, 0.3s background-color;
+  background-color: black;
+  color: white;
+}
+.img {
+  padding-right: 1em;
+  padding-left: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.content {
+  padding-left: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 7em;
+
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+.content:hover {
+  color: white;
+  transition: color 0.3s;
+}
+.personalTitle {
+  display: flex;
+  font-size: 30px;
+  justify-content: start;
+
+  font-weight: bold;
+}
+.personalStep {
+  display: flex;
+  justify-content: start;
+}
+.pagesCount {
+  background-color: rgba(227, 232, 255, 0.753);
+
+  display: flex;
+  font-weight: bold;
+  font-size: 20px;
+}
+.pagesCount:hover {
+  background-color: #32c1cd;
+  transition: background-color 0.3s;
+}
+.page {
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+}
+.selected {
+  border: solid 1px;
+  padding: 10px;
+  background-color: black;
+  border-radius: 3px;
+}
+.stepTitle {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  padding: 20px;
+}
+.video {
+  display: flex;
+  justify-content: center;
+}
+.arrow {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+.imgArrow {
+  background-color: rgba(227, 232, 255, 0.753);
+  border-radius: 50%;
+}
+.imgArrow:hover {
+  background-color: #32c1cd;
+
+  transition: background-color 0.3s;
+}
+.contentContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.passedPage {
+  margin: 0px;
+  padding: 10px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 3px;
+}
+
+.passedPage:hover {
+  background-color: rgb(255, 255, 255);
+  transition: background-color 0.2s;
+}
+.unpassedPage {
+  margin: 0px;
+  border-radius: 3px;
+  padding: 10px;
+  background-color: white;
+}
+.unpassedPage:hover {
+  background-color: rgb(0, 0, 0);
+  transition: background-color 0.2s;
+}
+.introduction {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  font-family: "Bebas Neue", cursive;
+
+  font-size: 30px;
+}
+.subIntroduction {
+  font-family: "Mohave", sans-serif;
+  font-size: 20px;
+}
+.comingContent {
+  padding-left: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /*height: 7em;*/
+
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+.coming_soon {
+  padding-top: 1em;
+}

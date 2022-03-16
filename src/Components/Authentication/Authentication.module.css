@@ -1,0 +1,233 @@
+@media screen and (max-width: 768px) {
+  .container {
+    grid-area: dashBoard;
+    padding-top: 4em;
+    background-color: whitesmoke;
+  }
+  .img {
+    display: flex;
+    width: 100%;
+  }
+  .customContainer {
+    background-color: white;
+    border: 3px solid;
+    display: flex;
+    justify-content: start;
+
+    /*width: 70em;
+    height: 30em;*/
+    border-left: none;
+    border-radius: 0px 40px 40px 0px;
+  }
+
+  .registration {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .input {
+    position: relative;
+
+    margin: 1em 3em 1em 3em;
+
+    max-width: 30em;
+  }
+  input {
+    height: 30px;
+    text-decoration: none;
+    border: none;
+  }
+
+  .button {
+    font-family: "Mohave", sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+    min-width: 24em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+
+    border: none;
+    background-color: #32c1cd;
+    border-radius: 5px;
+  }
+  .button:hover {
+    background-color: black;
+
+    transition: background-color 0.2s;
+  }
+  .buttonContainer {
+    padding-top: 30px;
+    display: flex;
+    justify-content: start;
+  }
+  .customInput {
+    border: 3px solid rgba(128, 128, 128, 0.479);
+    border-radius: 5px;
+    display: flex;
+    justify-content: start;
+
+    background-color: white;
+  }
+  .inputContent {
+    position: absolute;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+  input:focus {
+    position: relative;
+  }
+  .link {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+  }
+  .linkClick {
+    border-bottom: 1px solid;
+  }
+  input[type="text"] {
+    font-family: "Mohave", sans-serif;
+    color: black;
+    font-size: 18px;
+    width: 30em;
+    padding-left: 10px;
+  }
+  .title {
+    display: flex;
+    margin: 1em 3em 1em 3em;
+    font-size: 30px;
+    font-weight: bolder;
+  }
+  .inputContainer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .emailContainer {
+    padding-top: 50px;
+  }
+  .text {
+    font-size: 30px;
+  }
+  .icon {
+    padding-top: 50px;
+  }
+}
+@media screen and (min-width: 769px) {
+  .container {
+    grid-area: dashBoard;
+    display: flex;
+    justify-content: start;
+    padding-top: 4em;
+    background-color: whitesmoke;
+  }
+  .img {
+    width: 100%;
+  }
+
+  .customContainer {
+    background-color: white;
+    border: 3px solid;
+    display: flex;
+    justify-content: start;
+
+    /*width: 70em;
+    height: 30em;*/
+    border-left: none;
+    border-radius: 0px 40px 40px 0px;
+  }
+  .login_container {
+  }
+  .registration {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .input {
+    position: relative;
+
+    margin: 1em 3em 1em 3em;
+
+    max-width: 30em;
+  }
+  input {
+    height: 30px;
+    text-decoration: none;
+    border: none;
+  }
+
+  .button {
+    font-family: "Mohave", sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+    min-width: 24em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+
+    border: none;
+    background-color: #32c1cd;
+    border-radius: 5px;
+  }
+  .button:hover {
+    background-color: black;
+
+    transition: background-color 0.2s;
+  }
+  .buttonContainer {
+    padding-top: 30px;
+    display: flex;
+    justify-content: start;
+  }
+  .customInput {
+    border: 3px solid rgba(128, 128, 128, 0.479);
+    border-radius: 5px;
+    display: flex;
+    justify-content: start;
+
+    background-color: white;
+  }
+  .inputContent {
+    position: absolute;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+  input:focus {
+    position: relative;
+  }
+  .link {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+  }
+
+  input[type="text"] {
+    font-family: "Mohave", sans-serif;
+    color: black;
+    font-size: 18px;
+    width: 30em;
+    padding-left: 10px;
+  }
+  .title {
+    display: flex;
+    margin: 1em 3em 1em 3em;
+    font-size: 30px;
+    font-weight: bolder;
+  }
+  .inputContainer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .emailContainer {
+    padding-top: 50px;
+  }
+  .text {
+    font-size: 30px;
+  }
+  .icon {
+    padding-top: 50px;
+  }
+}

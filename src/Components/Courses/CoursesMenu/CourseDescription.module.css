@@ -1,0 +1,51 @@
+.container {
+  background-color: whitesmoke;
+  margin-top: 1em;
+}
+.courseNameContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.blocksContainer {
+  font-family: "Varela", sans-serif;
+  padding: 1em;
+  border: 3px solid;
+  border-left: none;
+  background-color: white;
+  border-radius: 0em 2em 2em 0em;
+}
+.courseName {
+  margin-left: 1em;
+  font-size: 4em;
+  font-weight: bold;
+}
+.imageContainer {
+}
+.img {
+  margin: 1em;
+  margin-left: 0;
+  border-radius: 0em 2em 2em 0em;
+  width: 100%;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+}
+.button {
+  padding: 0.5em 7em 0.5em 7em;
+  font-size: 2em;
+  font-weight: bold;
+  background-color: blueviolet;
+  border-radius: 1em;
+  color: white;
+  border: 3px solid;
+  border-color: black;
+}
+.button:hover {
+  transition: background-color, 0.3s;
+  background-color: black;
+}

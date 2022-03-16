@@ -1,0 +1,105 @@
+.blockContainer {
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+}
+.blockName {
+  border-radius: em;
+  margin: 1em;
+  font-size: 3em;
+  font-weight: bold;
+}
+.blockContent {
+  margin-left: 3em;
+  font-size: 20px;
+}
+.img {
+  margin: 1em;
+  margin-left: 0;
+  border-radius: 0em 2em 2em 0em;
+  width: 100%;
+}
+.blockVideo {
+  margin-left: 3em;
+}
+.videoContainer {
+  background-color: whitesmoke;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: start;
+  margin: 5em 1em 1em 0em;
+}
+.button {
+  padding: 0.5em 30% 0.5em 30%;
+  font-size: 2em;
+  font-weight: bold;
+  background-color: blueviolet;
+  border-radius: 0em 1em 1em 0em;
+  color: white;
+  border: 3px solid;
+  border-left: none;
+  border-color: black;
+}
+.button:hover {
+  transition: background-color, 0.3s;
+  background-color: black;
+}
+.checkAnswerContainer {
+  display: flex;
+  justify-content: center;
+}
+.checkAnswer {
+  margin: 20px;
+  font-size: 1.5em;
+  background-color: blueviolet;
+  border-radius: 15px;
+  color: white;
+  border: 3px solid black;
+  font-weight: bold;
+  padding: 1em 2em 1em 2em;
+}
+.checkAnswer:hover {
+  transition: background-color 0.3s;
+  background-color: black;
+}
+.optionContainer {
+  /*display: flex;*/
+  border-bottom: 1px solid black;
+  padding: 10px;
+
+  font-size: 1.5em;
+}
+.optionContainer:hover {
+  transition: background-color 0.3s, color 0.3s;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+.selected {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-weight: bold;
+}
+
+/*.optionContainer:hover {
+  transition: background-color 0s, color 0s;
+  background-color: black;
+  color: white;
+}*/
+.right {
+  border: 3px solid black;
+  border-radius: 10px;
+  background-color: rgb(190, 255, 190);
+}
+.not {
+  border: 3px solid black;
+  border-radius: 10px;
+  background-color: rgb(255, 208, 208);
+} /*
+.option {
+  padding: 5px;
+  font-size: 1.5em;
+}*/
+.sss {
+  margin: 1em;
+}
