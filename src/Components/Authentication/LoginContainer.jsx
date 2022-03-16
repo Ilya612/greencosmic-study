@@ -8,7 +8,7 @@ import Preloader from "../../Assets/Preloader/PreloaderPage.jsx";
 import { Redirect } from "react-router-dom";
 
 class LoginContainer extends React.Component {
-  login = ({ password, email }) => {
+  login = ({ password, email, setShowError }) => {
     $api
       .post("/login", { email, password })
       .then((response) => {
@@ -26,6 +26,7 @@ class LoginContainer extends React.Component {
         }
       })
       .catch((error) => {
+        setShowError(true);
         this.props.loading(false);
         console.log("wrong auth");
         console.log(error);
