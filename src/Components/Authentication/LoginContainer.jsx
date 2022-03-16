@@ -8,7 +8,8 @@ import Preloader from "../../Assets/Preloader/PreloaderPage.jsx";
 import { Redirect } from "react-router-dom";
 
 class LoginContainer extends React.Component {
-  login = ({ password, email, setShowError }) => {
+  login = ({ password, email }) => {
+    this.props.loading(true);
     $api
       .post("/login", { email, password })
       .then((response) => {
@@ -48,7 +49,11 @@ class LoginContainer extends React.Component {
         {this.props.state.isLoading.isLoading ? (
           <Preloader />
         ) : (
-          <Login state={this.props.state} login={this.login} />
+          <Login
+            wrongAuth={this.props.state.isLoading.wrongAuth}
+            state={this.props.state}
+            login={this.login}
+          />
         )}
       </div>
     );

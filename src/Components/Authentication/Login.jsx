@@ -7,14 +7,14 @@ import decoration from "../../Assets/Decorations/relax.svg";
 function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  console.log(props.wrongAuth);
   return (
     <div className={style.container}>
       <div className={style.customContainer}>
         <div className={style.login_container}>
           <div className={style.registration}>
             <div className={style.title}>Enter your profile</div>
-            {!props.state.wrongAuth ? (
+            {!props.wrongAuth ? (
               <div></div>
             ) : (
               <div>Wrong email or password</div>
@@ -46,7 +46,6 @@ function Login(props) {
                     props.login({
                       email,
                       password,
-                      setShowError,
                     });
                   }}
                   className={style.button}
