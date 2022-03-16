@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import $api from "../../Http/index.js";
 import { setUser, isAuth } from "../../Redux/Reducers/userReducer.js";
-import { loading } from "../../Redux/Reducers/loadingReducer.js";
+import { loading, setWrongAuth } from "../../Redux/Reducers/loadingReducer.js";
 import Login from "./Login.jsx";
 import Preloader from "../../Assets/Preloader/PreloaderPage.jsx";
 import { Redirect } from "react-router-dom";
@@ -26,7 +26,7 @@ class LoginContainer extends React.Component {
         }
       })
       .catch((error) => {
-        setShowError(true);
+        this.props.setWrongAuth(true);
         this.props.loading(false);
         console.log("wrong auth");
         console.log(error);
@@ -64,6 +64,7 @@ const mapDispatchToProps = (dispatch) => {
     setUser: (user) => dispatch(setUser(user)),
     loading: (isLoading) => dispatch(loading(isLoading)),
     isAuth: (value) => dispatch(isAuth(value)),
+    setWrongAuth: (value) => dispatch(setWrongAuth(value)),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer);

@@ -7,15 +7,18 @@ import decoration from "../../Assets/Decorations/relax.svg";
 function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [showError, setShowError] = useState(false);
-  console.log(showError);
+
   return (
     <div className={style.container}>
       <div className={style.customContainer}>
         <div className={style.login_container}>
           <div className={style.registration}>
             <div className={style.title}>Enter your profile</div>
-            {!showError ? <div></div> : <div>Wrong email or password</div>}
+            {!props.state.wrongAuth ? (
+              <div></div>
+            ) : (
+              <div>Wrong email or password</div>
+            )}
             <div className={style.input}>
               <div className={style.inputContainer}>
                 <div className={style.customInput}>
