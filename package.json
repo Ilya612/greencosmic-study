@@ -42,7 +42,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://greencosmic-study.vercel.app/",
+  "proxy": "https://greencosmic-study.vercel.app",
   "devDependencies": {
     "@types/query-string": "^6.3.0",
     "query-search": "^0.0.4"
