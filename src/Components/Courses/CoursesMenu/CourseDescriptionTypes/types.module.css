@@ -1,14 +1,32 @@
-.blockContainer {
-  display: flex;
-  justify-content: center;
+@media screen and (max-width: 768px) {
+  .blockContainer {
+    display: flex;
+    justify-content: center;
+  }
+  .blockName {
+    border-radius: em;
+    margin: 1em;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  .blockContent {
+    margin-left: 1em;
+    font-size: 1em;
+  }
 }
-.blockName {
-  border-radius: em;
-  margin: 1em;
-  font-size: 3em;
-  font-weight: bold;
-}
-.blockContent {
-  margin-left: 3em;
-  font-size: 20px;
+@media screen and (min-width: 768px) {
+  .blockContainer {
+    display: flex;
+    justify-content: center;
+  }
+  .blockName {
+    border-radius: em;
+    margin: 1em;
+    font-size: 3em;
+    font-weight: bold;
+  }
+  .blockContent {
+    margin-left: 3em;
+    font-size: 20px;
+  }
 }

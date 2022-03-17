@@ -1,7 +1,7 @@
 @media screen and (max-width: 768px) {
   .container {
-    grid-area: dashBoard;
-    padding-top: 4em;
+    grid-area: workspace_main;
+    padding-top: 2em;
     background-color: whitesmoke;
   }
   .img {
@@ -12,7 +12,7 @@
     background-color: white;
     border: 3px solid;
     display: flex;
-    justify-content: start;
+    justify-content: center;
 
     /*width: 70em;
     height: 30em;*/
@@ -43,7 +43,7 @@
     font-size: 20px;
     font-weight: bolder;
     color: white;
-    min-width: 24em;
+    min-width: 15em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
 
@@ -91,13 +91,14 @@
     font-family: "Mohave", sans-serif;
     color: black;
     font-size: 18px;
-    width: 30em;
+    max-width: 30em;
+    min-width: 16em;
     padding-left: 10px;
   }
   .title {
     display: flex;
     margin: 1em 3em 1em 3em;
-    font-size: 30px;
+    font-size: 1em;
     font-weight: bolder;
   }
   .inputContainer {
@@ -116,14 +117,14 @@
 }
 @media screen and (min-width: 769px) {
   .container {
-    grid-area: dashBoard;
+    grid-area: workspace_main;
     display: flex;
     justify-content: start;
     padding-top: 4em;
     background-color: whitesmoke;
   }
   .img {
-    width: 100%;
+    width: 30em;
   }
 
   .customContainer {

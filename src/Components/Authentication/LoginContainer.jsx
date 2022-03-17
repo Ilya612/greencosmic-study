@@ -22,9 +22,8 @@ class LoginContainer extends React.Component {
         };
         this.props.setUser(user);
         this.props.loading(false);
-        if (response.data.user.isActivated === true) {
-          this.props.isAuth(true);
-        }
+
+        this.props.isAuth(true);
       })
       .catch((error) => {
         this.props.setWrongAuth(true);

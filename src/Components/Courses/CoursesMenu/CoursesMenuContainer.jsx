@@ -9,6 +9,7 @@ import {
   setCurrentCourseName,
 } from "../../../Redux/Reducers/coursesReducer.js";
 import Preloader from "../../../Assets/Preloader/PreloaderPage.jsx";
+import style from "./Courses.module.css";
 class CoursesMenuContainer extends React.Component {
   componentDidMount() {
     this.props.loading(true);
@@ -28,7 +29,7 @@ class CoursesMenuContainer extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={style.container}>
         {this.props.state.isLoading.isLoading ? (
           <Preloader />
         ) : (

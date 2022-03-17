@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 ///course/steps
 function CoursesLessons(props) {
   return (
-    <div className={style.container}>
+    <div>
       <div>
         <div className={style.introduction}>
           {props.username + ", great day to learn something new!"}

@@ -14,6 +14,8 @@ const $api = axios.create({
 $api.interceptors.request.use((config) => {
   config.headers.Authorization = "Bearer " + store.getState().user.token;
 
+  console.log(store.getState());
+  console.log(config);
   return config;
 });
 /**
@@ -40,7 +42,7 @@ $api.interceptors.response.use(
             withCredentials: true,
           }
         );
-
+        console.log(response);
         store.dispatch(refreshToken(response.data));
         store.dispatch(isAuth(true));
         return $api.request(originalRequest);

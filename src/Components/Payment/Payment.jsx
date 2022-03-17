@@ -14,11 +14,13 @@ const stripePromise = loadStripe(
   "pk_test_51KRcjgF95E6xGFpDKlYkxIoVMeQKAkNQ93qXu9tBJIrv3PqQ4oQD6PfG9Bb9xJtRSYf3hL4olUhAlk9JcGdtdMK1004ps5RQvv"
 );
 
-export default function Payment() {
+export default function Payment(props) {
   const [clientSecret, setClientSecret] = useState("");
-
   useEffect(() => {
-    $api
+    setClientSecret(props.client_secret);
+  });
+  useEffect(() => {
+    /* $api
       .post("/create-payment-intent", { items: { id: "course" } })
       .then((response) => {
         console.log(response);
@@ -26,7 +28,7 @@ export default function Payment() {
       })
       .catch((error) => {
         console.log(error);
-      });
+      });*/
   }, []);
 
   const appearance = {

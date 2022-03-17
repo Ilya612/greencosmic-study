@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 function coursesMenu(props) {
   if (props.userCourses !== "") {
     return (
-      <div className={style.container}>
+      <div>
         <div>
           <div className={style.introduction}>
             {props.username + ", great day to learn something new!"}
@@ -36,10 +36,10 @@ function coursesMenu(props) {
         <div className={style.coming}>
           <div className={style.comingContent}>
             <div className={style.coming_soon}>Coming soon...</div>
-            <div>
-              <img src={decore} alt="" />
-            </div>
           </div>
+        </div>
+        <div>
+          <img className={style.menuImage} src={decore} alt="" />
         </div>
       </div>
     );

@@ -29,7 +29,6 @@ function CoursesSteps(props) {
       $api
         .post("/course/lessons", { courseName: parsed.course_name })
         .then((response) => {
-          console.log(response);
           props.setLessons(response.data.lessons);
         });
       props.setCurrentCourseName(parsed.course_name);
@@ -113,7 +112,7 @@ function CoursesSteps(props) {
   });
 
   return (
-    <div className={style.container}>
+    <div>
       <div id="content">
         {currentStep.map((step, index) => {
           if (step.stepType === "Test") {

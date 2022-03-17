@@ -12,7 +12,7 @@ function CourseDescription(props) {
   //const [initialEffect, setInitialEffect] = useState(0);
 
   return (
-    <div className={style.container}>
+    <div>
       <div className={style.courseNameContainer}>
         <div className={style.courseName}>
           {props.courseDescription.courseName}

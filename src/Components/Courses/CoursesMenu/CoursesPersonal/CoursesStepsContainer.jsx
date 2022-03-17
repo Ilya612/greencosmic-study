@@ -12,7 +12,7 @@ import {
   setSteps,
   setCurrentCourseName,
 } from "../../../../Redux/Reducers/coursesReducer.js";
-
+import style from "./CoursesSteps.module.css";
 import Preloader from "../../../../Assets/Preloader/PreloaderPage.jsx";
 
 class CoursesStepsContainer extends React.Component {
@@ -54,7 +54,7 @@ class CoursesStepsContainer extends React.Component {
     console.log("ВЫЗВАЛСЯ РЕРЕНДЕР");
 
     return (
-      <div>
+      <div className={style.container}>
         {this.props.state.isLoading.isLoading ? (
           <Preloader />
         ) : (

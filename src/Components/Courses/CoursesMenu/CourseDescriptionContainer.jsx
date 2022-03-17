@@ -7,6 +7,8 @@ import { isAuth } from "../../../Redux/Reducers/userReducer.js";
 import { setCourseDescription } from "../../../Redux/Reducers/coursesReducer.js";
 import Preloader from "../../../Assets/Preloader/PreloaderPage.jsx";
 import { Redirect } from "react-router-dom";
+import style from "./Courses.module.css";
+
 class CourseDescriptionContainer extends React.Component {
   componentDidMount() {
     this.props.loading(true);
@@ -32,7 +34,7 @@ class CourseDescriptionContainer extends React.Component {
     }
 
     return (
-      <div>
+      <div className={style.container}>
         {this.props.state.isLoading.isLoading ? (
           <Preloader />
         ) : (

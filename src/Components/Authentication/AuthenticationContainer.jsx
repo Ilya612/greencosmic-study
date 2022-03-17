@@ -1,10 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import $api from "../../Http/index.js";
-import { setUser } from "../../Redux/Reducers/userReducer.js";
+import { setUser, setClientSecret } from "../../Redux/Reducers/userReducer.js";
 import { loading, setStatusCode } from "../../Redux/Reducers/loadingReducer.js";
 import Authentication from "./Authentication.jsx";
 import Preloader from "../../Assets/Preloader/PreloaderPage.jsx";
+import { Redirect } from "react-router-dom";
 
 class AuthenticationContainer extends React.Component {
   registration = ({ username, password, email }) => {
@@ -19,13 +20,16 @@ class AuthenticationContainer extends React.Component {
           };
           props.setUser(user);*/
         // this.props.setStatusCode(response.status);
-        window.open(response.data.url, "payment_page", [
+        /*   window.open(response.data.url, "payment_page", [
           "popup=yes",
           "height=600",
           "width=600",
           "left=300",
           "top=20",
-        ]);
+        ]);*/
+        // this.props.setClientSecret(response)
+        localStorage.setItem("client_secret", response.data.client_secret);
+        this.props.setClientSecret(response.data.client_secret);
         this.props.loading(false);
       })
       .catch((error) => {
@@ -35,6 +39,9 @@ class AuthenticationContainer extends React.Component {
   };
 
   render() {
+    if (this.props.state.user.client_secret !== "") {
+      return <Redirect to="/payment" />;
+    }
     return (
       <div>
         {this.props.state.isLoading.isLoading ? (
@@ -60,6 +67,7 @@ const mapDispatchToProps = (dispatch) => {
     setUser: (user) => dispatch(setUser(user)),
     loading: (isLoading) => dispatch(loading(isLoading)),
     setStatusCode: (value) => dispatch(setStatusCode(value)),
+    setClientSecret: (value) => dispatch(setClientSecret(value)),
   };
 };
 export default connect(

@@ -4,7 +4,7 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
-
+import $api from "../../Http/index.js";
 export default function CheckoutForm() {
   const stripe = useStripe();
   const elements = useElements();
@@ -26,9 +26,21 @@ export default function CheckoutForm() {
     }
 
     stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
+      console.log("Im here");
       switch (paymentIntent.status) {
         case "succeeded":
           setMessage("Payment succeeded!");
+          $api
+            .post(
+              "/create-payment-intent/activate-user",
+              localStorage.getItem("client_secret")
+            )
+            .then((response) => {
+              console.log(response);
+            })
+            .catch((error) => {
+              console.log(error);
+            });
           break;
         case "processing":
           setMessage("Your payment is processing.");

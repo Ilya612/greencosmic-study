@@ -1,83 +1,175 @@
-.name_main {
-  grid-area: name_main;
-  color: black;
-}
-.title {
-  font-size: 2em;
-  font-weight: bold;
-  margin: 00.3em;
-  color: white;
-}
-.profile_main {
-  grid-area: profile_main;
-
-  background-color: black;
-  color: white;
-}
-
-.img {
-  padding-right: 10px;
-}
-.buttons {
-  font-size: 25px;
-  color: white;
-}
-.button {
-  display: flex;
-
-  padding: 1em;
-  font-weight: normal;
-}
-.text {
-  font-weight: bold;
-  border-radius: 15px;
-  padding: 10px;
-  color: black;
-}
-.text:hover {
-  transition: 0.3s background-color, 0.3s color;
-  background-color: #32c1cd;
-  border-radius: 20px;
-  color: white;
-}
-.nickName {
-  padding: 10px;
-}
-/*a {
-  border-bottom: none;
-
-  color: white;
-  border-bottom: none;
-}*/
-.greetings {
-  display: flex;
-  justify-content: center;
-  margin: 1em;
-}
-.Nav {
-  margin-left: 1em;
-}
-.lesson {
-  margin-left: 1em;
-}
-.currentCourseName {
-  margin-left: 1em;
-}
-.selected {
-  line-height: 50px;
-  margin: 0.3em auto;
-  padding: 0 5px;
-  background: #32c1cd;
-  color: #fff;
-  text-align: center;
-
-  border-radius: 15px;
-  box-shadow: 0 0 20px #32c1cd;
-}
-.username {
-  display: flex;
-  justify-content: center;
-  font-weight: bold;
-}
 @media screen and (max-width: 768px) {
+  .buttons {
+    display: none;
+  }
+  .profileImg {
+    display: flex;
+    width: 100%;
+  }
+  .button {
+    display: flex;
+
+    font-weight: normal;
+  }
+  .name_main {
+    grid-area: name_main;
+    color: black;
+    background-color: whitesmoke;
+  }
+  .title {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 00.3em;
+    color: white;
+  }
+  .profile_main {
+    grid-area: profile_main;
+
+    background-color: black;
+    color: white;
+  }
+
+  .img {
+    padding-right: 10px;
+  }
+  .buttons {
+    font-size: 25px;
+    color: white;
+  }
+
+  .text {
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 10px;
+    color: black;
+  }
+  .text:hover {
+    transition: 0.3s background-color, 0.3s color;
+    background-color: #32c1cd;
+    border-radius: 20px;
+    color: white;
+  }
+  .nickName {
+    padding: 10px;
+  }
+  /*a {
+    border-bottom: none;
+  
+    color: white;
+    border-bottom: none;
+  }*/
+  .greetings {
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+  }
+  .Nav {
+    margin-left: 1em;
+  }
+  .lesson {
+    margin-left: 1em;
+  }
+  .currentCourseName {
+    margin-left: 1em;
+  }
+  .selected {
+    line-height: 50px;
+    margin: 0.3em auto;
+    padding: 0 5px;
+    background: #32c1cd;
+    color: #fff;
+    text-align: center;
+
+    border-radius: 15px;
+    box-shadow: 0 0 20px #32c1cd;
+  }
+  .username {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+  }
+}
+@media screen and (min-width: 768px) {
+  .name_main {
+    grid-area: name_main;
+    color: black;
+    background-color: whitesmoke;
+  }
+  .title {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 00.3em;
+    color: white;
+  }
+  .profile_main {
+    grid-area: profile_main;
+
+    background-color: black;
+    color: white;
+  }
+
+  .img {
+    padding-right: 10px;
+  }
+  .buttons {
+    font-size: 25px;
+    color: white;
+  }
+  .button {
+    display: flex;
+
+    padding: 1em;
+    font-weight: normal;
+  }
+  .text {
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 10px;
+    color: black;
+  }
+  .text:hover {
+    transition: 0.3s background-color, 0.3s color;
+    background-color: #32c1cd;
+    border-radius: 20px;
+    color: white;
+  }
+  .nickName {
+    padding: 10px;
+  }
+  /*a {
+    border-bottom: none;
+  
+    color: white;
+    border-bottom: none;
+  }*/
+  .greetings {
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+  }
+  .Nav {
+    margin-left: 1em;
+  }
+  .lesson {
+    margin-left: 1em;
+  }
+  .currentCourseName {
+    margin-left: 1em;
+  }
+  .selected {
+    line-height: 50px;
+    margin: 0.3em auto;
+    padding: 0 5px;
+    background: #32c1cd;
+    color: #fff;
+    text-align: center;
+
+    border-radius: 15px;
+    box-shadow: 0 0 20px #32c1cd;
+  }
+  .username {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+  }
 }

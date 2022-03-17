@@ -1,6 +1,4 @@
 .container {
-  position: absolute;
   display: flex;
   justify-content: center;
-  background-color: white;
 }

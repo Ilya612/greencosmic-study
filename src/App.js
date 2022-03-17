@@ -14,6 +14,7 @@ import CoursesAdminContainer from "./Components/Courses/CoursesAdmin/CoursesAdmi
 import CoursesLessonsContainer from "./Components/Courses/CoursesMenu/CoursesLessonsContainer.jsx";
 import "./App.css";
 import ProfileContainer from "./Components/Profile/ProfileContainer.jsx";
+import PaymentContainer from "./Components/Payment/PymentContainer.jsx";
 
 import {
   BrowserRouter as Router,
@@ -57,6 +58,7 @@ function App() {
             render={() => <CoursesLessonsContainer />}
           />
           <Route exact path="/profile" render={() => <ProfileContainer />} />
+          <Route exact path="/payment" render={() => <PaymentContainer />} />
 
           <Redirect to="/" />
         </Switch>

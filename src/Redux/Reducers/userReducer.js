@@ -7,10 +7,12 @@ const SET_CITY = "SET_CITY";
 const SET_LINK_INST = "SET_LINK_INST";
 const SET_LINK_LINKEDIN = "SET_LINK_LINKEDIN";
 const SET_LINK_FACEBOOK = "SET_LINK_FACEBOOK";
+const CLIENT_SECRET = "CLIENT_SECRET";
 
 const IS_AUTH = "IS_AUTH";
 
 let initialState = {
+  client_secret: "",
   token: "",
   username: "",
   _id: "",
@@ -26,6 +28,11 @@ let initialState = {
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
+    case CLIENT_SECRET:
+      return {
+        ...state,
+        client_secret: action.value,
+      };
     case SET_BIRTHDAY:
       return {
         ...state,
@@ -88,6 +95,10 @@ const userReducer = (state = initialState, action) => {
 };
 
 export default userReducer;
+export const setClientSecret = (value) => ({
+  type: CLIENT_SECRET,
+  value,
+});
 export const setBirthday = (value) => ({
   type: SET_BIRTHDAY,
   value,

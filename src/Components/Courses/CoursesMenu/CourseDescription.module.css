@@ -2,12 +2,6 @@
   background-color: whitesmoke;
   margin-top: 1em;
 }
-.courseNameContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  flex-wrap: wrap;
-}
 
 .blocksContainer {
   font-family: "Varela", sans-serif;
@@ -17,10 +11,65 @@
   background-color: white;
   border-radius: 0em 2em 2em 0em;
 }
-.courseName {
-  margin-left: 1em;
-  font-size: 4em;
-  font-weight: bold;
+@media screen and (max-width: 768px) {
+  .courseName {
+    display: flex;
+    justify-content: center;
+    margin-left: 0.5em;
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .courseNameContainer {
+    padding-top: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+  }
+  .button {
+    padding: 0.5em 30% 0.5em 30%;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: blueviolet;
+    border-radius: 1em;
+    color: white;
+    border: 3px solid;
+    border-color: black;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .courseName {
+    margin-left: 1em;
+    font-size: 4em;
+    font-weight: bold;
+  }
+  .courseNameContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+  }
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+  }
+  .button {
+    padding: 0.5em 7em 0.5em 7em;
+    font-size: 2em;
+    font-weight: bold;
+    background-color: blueviolet;
+    border-radius: 1em;
+    color: white;
+    border: 3px solid;
+    border-color: black;
+  }
 }
 .imageContainer {
 }
@@ -30,21 +79,7 @@
   border-radius: 0em 2em 2em 0em;
   width: 100%;
 }
-.buttonContainer {
-  display: flex;
-  justify-content: center;
-  margin: 1em;
-}
-.button {
-  padding: 0.5em 7em 0.5em 7em;
-  font-size: 2em;
-  font-weight: bold;
-  background-color: blueviolet;
-  border-radius: 1em;
-  color: white;
-  border: 3px solid;
-  border-color: black;
-}
+
 .button:hover {
   transition: background-color, 0.3s;
   background-color: black;

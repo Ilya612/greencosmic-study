@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import CheckEmail from "./CheckEmail";
+import decoration from "../../Assets/Decorations/relax.svg";
 
 function Authentication(props) {
   const [username, setUsername] = useState(""); // '' is the initial state value
@@ -85,6 +86,9 @@ function Authentication(props) {
             </div>
           </div>
         )}
+      </div>
+      <div>
+        <img className={style.img} src={decoration} alt="" />
       </div>
     </div>
   );

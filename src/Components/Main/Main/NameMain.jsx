@@ -1,6 +1,6 @@
 import style from "./Main.module.css";
 
-import Profile from "../../../Assets/Profile/Profile.jsx";
+import Profile from "../../../Assets/Profile/profile.svg";
 import { NavLink } from "react-router-dom";
 function NameMain(props) {
   return (
@@ -12,9 +12,9 @@ function NameMain(props) {
           })}
           to="/profile"
         >
+          <div className={style.username}>{props.username}</div>
           <div className={style.button}>
-            <Profile />
-            <div className={style.username}>{props.username}</div>
+            <img className={style.profileImg} src={Profile} alt="" />
           </div>
         </NavLink>
       ) : (

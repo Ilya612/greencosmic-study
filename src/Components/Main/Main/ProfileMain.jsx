@@ -10,22 +10,17 @@ function ProfileMain(props) {
       <div className={style.fixed}>
         <div className={style.fixed_fixed}>
           <div className={style.title}>
-            <div>GreenCosmic Study</div>
+            <NavLink
+              style={({ isActive }) => ({
+                color: isActive ? "var(--color-active)" : "white",
+              })}
+              to={"/courses"}
+            >
+              <div>GreenCosmic Study</div>
+            </NavLink>
           </div>
           {props.isAuth ? (
             <div className={style.buttons}>
-              <div>
-                <NavLink
-                  style={({ isActive }) => ({
-                    color: isActive ? "var(--color-active)" : "white",
-                  })}
-                  to={"/courses"}
-                >
-                  <div className={style.button}>
-                    <div>All Courses</div>
-                  </div>
-                </NavLink>
-              </div>
               <div>
                 <div className={style.Nav}>Current Course:</div>
                 <div className={style.button}>

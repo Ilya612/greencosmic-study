@@ -12,6 +12,8 @@ import {
 } from "../../../Redux/Reducers/coursesReducer.js";
 import Preloader from "../../../Assets/Preloader/PreloaderPage.jsx";
 import { Redirect } from "react-router-dom";
+import style from "./Courses.module.css";
+
 class CoursesLessonsContainer extends React.Component {
   componentDidMount() {
     this.props.loading(true);
@@ -35,7 +37,7 @@ class CoursesLessonsContainer extends React.Component {
       return <Redirect to="/courses" />;
     }
     return (
-      <div>
+      <div className={style.container}>
         {this.props.state.isLoading.isLoading ? (
           <Preloader />
         ) : (
