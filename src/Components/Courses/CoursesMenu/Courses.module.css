@@ -35,6 +35,7 @@
 }
 .menuImage {
   display: flex;
+  justify-content: end;
   width: 20em;
 }
 .coursesContainer {
