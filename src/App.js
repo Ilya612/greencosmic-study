@@ -15,7 +15,9 @@ import CoursesLessonsContainer from "./Components/Courses/CoursesMenu/CoursesLes
 import "./App.css";
 import ProfileContainer from "./Components/Profile/ProfileContainer.jsx";
 import PaymentContainer from "./Components/Payment/PymentContainer.jsx";
-
+import store from "./Redux/reduxStore.js";
+import { isAuth, setUser } from "./Redux/Reducers/userReducer.js";
+import { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -24,6 +26,13 @@ import {
 } from "react-router-dom";
 
 function App() {
+  useEffect(() => {
+    if (localStorage.getItem("user").username) {
+      const user = localStorage.getItem("user");
+      store.dispatch(isAuth(user.isAuth));
+      store.dispatch(setUser(user));
+    }
+  }, [localStorage]);
   return (
     <div className="container">
       <Router>
