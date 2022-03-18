@@ -3,6 +3,7 @@ import style from "./Main.module.css";
 import Profile from "../../../Assets/Profile/profile.svg";
 import { NavLink } from "react-router-dom";
 function NameMain(props) {
+  console.log(localStorage.getItem("user"));
   return (
     <div className={style.name_main}>
       {props.isAuth ? (

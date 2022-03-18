@@ -10,7 +10,7 @@ const SET_LINK_FACEBOOK = "SET_LINK_FACEBOOK";
 const CLIENT_SECRET = "CLIENT_SECRET";
 
 const IS_AUTH = "IS_AUTH";
-if (!localStorage.getItem("user")) {
+if (!localStorage.getItem("user").username) {
   localStorage.setItem("user", {
     username: "",
     _id: "",
