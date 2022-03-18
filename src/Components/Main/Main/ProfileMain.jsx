@@ -19,7 +19,7 @@ function ProfileMain(props) {
               <div>GreenCosmic Study</div>
             </NavLink>
           </div>
-          {props.isAuth ? (
+          {localStorage.getItem("user").isAuth ? (
             <div className={style.buttons}>
               <div>
                 <div className={style.Nav}>Current Course:</div>

@@ -7,7 +7,8 @@ function CoursesLessons(props) {
     <div>
       <div>
         <div className={style.introduction}>
-          {props.username + ", great day to learn something new!"}
+          {localStorage.getItem("user").username +
+            ", great day to learn something new!"}
           <div className={style.subIntroduction}>Choose lesson</div>
         </div>
       </div>

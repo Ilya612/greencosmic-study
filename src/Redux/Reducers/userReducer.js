@@ -8,24 +8,15 @@ const SET_LINK_INST = "SET_LINK_INST";
 const SET_LINK_LINKEDIN = "SET_LINK_LINKEDIN";
 const SET_LINK_FACEBOOK = "SET_LINK_FACEBOOK";
 const CLIENT_SECRET = "CLIENT_SECRET";
-
 const IS_AUTH = "IS_AUTH";
-if (!localStorage.getItem("user").username) {
-  localStorage.setItem("user", {
-    username: "",
-    _id: "",
-    role: "",
-    isAuth: false,
-  });
-}
 
 let initialState = {
   client_secret: "",
   token: "",
-  username: localStorage.getItem("user").username,
-  _id: localStorage.getItem("user")._id,
-  role: localStorage.getItem("user").role,
-  isAuth: localStorage.getItem("user").isAuth,
+  username: "",
+  _id: "",
+  role: "",
+  isAuth: "",
   birthday: "",
   phoneNumber: "",
   city: "",

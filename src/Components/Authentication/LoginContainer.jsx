@@ -35,7 +35,7 @@ class LoginContainer extends React.Component {
       });
   };
   render() {
-    if (this.props.state.user.isAuth === true) {
+    if (localStorage.getItem("user").isAuth === true) {
       if (
         this.props.state.user.role[1] &&
         this.props.state.user.role[1] === "ADMIN"
