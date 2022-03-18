@@ -10,14 +10,19 @@ const SET_LINK_FACEBOOK = "SET_LINK_FACEBOOK";
 const CLIENT_SECRET = "CLIENT_SECRET";
 
 const IS_AUTH = "IS_AUTH";
-
+localStorage.setItem("user", {
+  username: "",
+  _id: "",
+  role: "",
+  isAuth: false,
+});
 let initialState = {
   client_secret: "",
   token: "",
-  username: localStorage.getItem("user").username,
-  _id: localStorage.getItem("user")._id,
-  role: localStorage.getItem("user").role,
-  isAuth: localStorage.getItem("user").isAuth,
+  username: localStorage.getItem("user").username || "",
+  _id: localStorage.getItem("user")._id || "",
+  role: localStorage.getItem("user").role || "",
+  isAuth: localStorage.getItem("user").isAuth || false,
   birthday: "",
   phoneNumber: "",
   city: "",
