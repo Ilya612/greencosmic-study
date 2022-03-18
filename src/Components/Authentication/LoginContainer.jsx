@@ -24,7 +24,7 @@ class LoginContainer extends React.Component {
         this.props.loading(false);
 
         this.props.isAuth(true);
-        localStorage.setItem("token", response.data.accessToken);
+        //localStorage.setItem("token", response.data.accessToken);
       })
       .catch((error) => {
         this.props.setWrongAuth(true);
