@@ -13,7 +13,7 @@ const $api = axios.create({
  */
 $api.interceptors.request.use((config) => {
   config.headers.Authorization = "Bearer " + store.getState().user.token;
-
+  console.log(document.cookie);
   console.log(store.getState());
   console.log(config);
   return config;
@@ -23,6 +23,7 @@ $api.interceptors.request.use((config) => {
  */
 $api.interceptors.response.use(
   (config) => {
+    console.log(document.cookie);
     return config;
   },
   async (error) => {
