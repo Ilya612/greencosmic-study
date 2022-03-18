@@ -3,6 +3,8 @@ import store from "../Redux/reduxStore.js";
 import { refreshToken, isAuth } from "../Redux/Reducers/userReducer.js";
 export const API_URL = "https://greencosmic-api.vercel.app/api";
 
+axios.defaults.withCredentials = true;
+
 const $api = axios.create({
   withCredentials: true,
   baseURL: API_URL,
