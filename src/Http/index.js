@@ -12,10 +12,8 @@ const $api = axios.create({
  * Прикрепляем токены к запросам
  */
 $api.interceptors.request.use((config) => {
-  config.headers.Authorization = "Bearer " + store.getState().user.token;
-  console.log(document.cookie);
-  console.log(store.getState());
-  console.log(config);
+  config.headers.Authorization = "Bearer " + localStorage.getItem("token");
+
   return config;
 });
 /**
@@ -23,7 +21,6 @@ $api.interceptors.request.use((config) => {
  */
 $api.interceptors.response.use(
   (config) => {
-    console.log(document.cookie);
     return config;
   },
   async (error) => {
@@ -37,14 +34,12 @@ $api.interceptors.response.use(
     ) {
       originalRequest.retry = true;
       try {
-        const response = await axios.get(
-          "https://greencosmic-api.vercel.app/api/refresh",
-          {
-            withCredentials: true,
-          }
-        );
+        const response = await axios.get("/refresh", {
+          withCredentials: true,
+        });
         console.log(response);
-        store.dispatch(refreshToken(response.data));
+        localStorage.setItem("token", response.data.accessToken);
+        //store.dispatch(refreshToken(response.data));
         store.dispatch(isAuth(true));
         return $api.request(originalRequest);
       } catch (error) {

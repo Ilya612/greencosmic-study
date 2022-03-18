@@ -29,6 +29,7 @@ class AuthenticationContainer extends React.Component {
         ]);*/
         // this.props.setClientSecret(response)
         localStorage.setItem("client_secret", response.data.client_secret);
+
         this.props.setClientSecret(response.data.client_secret);
         this.props.loading(false);
       })
