@@ -15,9 +15,7 @@ import CoursesLessonsContainer from "./Components/Courses/CoursesMenu/CoursesLes
 import "./App.css";
 import ProfileContainer from "./Components/Profile/ProfileContainer.jsx";
 import PaymentContainer from "./Components/Payment/PymentContainer.jsx";
-import store from "./Redux/reduxStore.js";
-import { isAuth, refreshToken } from "./Redux/Reducers/userReducer.js";
-import { useEffect } from "react";
+
 import {
   BrowserRouter as Router,
   Route,
