@@ -19,12 +19,13 @@ class LoginContainer extends React.Component {
           username: response.data.user.username,
           _id: response.data.user.id,
           role: response.data.user.roles,
+          isAuth: true,
         };
         this.props.setUser(user);
         this.props.loading(false);
-
+        localStorage.setItem("user", user);
         this.props.isAuth(true);
-        //localStorage.setItem("token", response.data.accessToken);
+        localStorage.setItem("token", response.data.accessToken);
       })
       .catch((error) => {
         this.props.setWrongAuth(true);

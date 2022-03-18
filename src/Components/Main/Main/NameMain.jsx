@@ -12,7 +12,9 @@ function NameMain(props) {
           })}
           to="/profile"
         >
-          <div className={style.username}>{props.username}</div>
+          <div className={style.username}>
+            {localStorage.getItem("user").username}
+          </div>
           <div className={style.button}>
             <img className={style.profileImg} src={Profile} alt="" />
           </div>
