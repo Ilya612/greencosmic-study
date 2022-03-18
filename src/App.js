@@ -27,7 +27,7 @@ import {
 
 function App() {
   useEffect(() => {
-    if (localStorage.getItem("user").username) {
+    if (localStorage.getItem("user")?.username) {
       const user = localStorage.getItem("user");
       store.dispatch(isAuth(user.isAuth));
       store.dispatch(setUser(user));
