@@ -7,7 +7,7 @@ function CoursesLessons(props) {
     <div>
       <div>
         <div className={style.introduction}>
-          {localStorage.getItem("user")?.username +
+          {localStorage.getItem("username") +
             ", great day to learn something new!"}
           <div className={style.subIntroduction}>Choose lesson</div>
         </div>

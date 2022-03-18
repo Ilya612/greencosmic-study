@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 function NameMain(props) {
   return (
     <div className={style.name_main}>
-      {localStorage.getItem("user")?.isAuth ? (
+      {localStorage.getItem("isAuth") ? (
         <NavLink
           style={({ isActive }) => ({
             color: isActive ? "var(--color-active)" : "black",

@@ -16,7 +16,7 @@ import "./App.css";
 import ProfileContainer from "./Components/Profile/ProfileContainer.jsx";
 import PaymentContainer from "./Components/Payment/PymentContainer.jsx";
 import store from "./Redux/reduxStore.js";
-import { isAuth, setUser } from "./Redux/Reducers/userReducer.js";
+import { isAuth, setUserName } from "./Redux/Reducers/userReducer.js";
 import { useEffect } from "react";
 import {
   BrowserRouter as Router,
@@ -27,10 +27,9 @@ import {
 
 function App() {
   useEffect(() => {
-    if (localStorage.getItem("user")?.username) {
-      const user = localStorage.getItem("user");
-      store.dispatch(isAuth(user.isAuth));
-      store.dispatch(setUser(user));
+    if (localStorage.getItem("username")) {
+      store.dispatch(isAuth(localStorage.getItem("isAuth")));
+      store.dispatch(setUserName(localStorage.getItem("username")));
     }
   }, [localStorage]);
   return (

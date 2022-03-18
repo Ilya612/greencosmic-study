@@ -9,6 +9,7 @@ const SET_LINK_LINKEDIN = "SET_LINK_LINKEDIN";
 const SET_LINK_FACEBOOK = "SET_LINK_FACEBOOK";
 const CLIENT_SECRET = "CLIENT_SECRET";
 const IS_AUTH = "IS_AUTH";
+const SET_USER_NAME = "SET_USER_NAME";
 
 let initialState = {
   client_secret: "",
@@ -62,6 +63,11 @@ const userReducer = (state = initialState, action) => {
         ...state,
         linkToFacebook: action.value,
       };
+    case SET_USER_NAME:
+      return {
+        ...state,
+        username: action.username,
+      };
     case SET_USER:
       return {
         ...state,
@@ -94,6 +100,10 @@ const userReducer = (state = initialState, action) => {
 };
 
 export default userReducer;
+export const setUserName = (value) => ({
+  type: SET_USER_NAME,
+  value,
+});
 export const setClientSecret = (value) => ({
   type: CLIENT_SECRET,
   value,
