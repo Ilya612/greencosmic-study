@@ -103,7 +103,7 @@ function CoursesSteps(props) {
 
           if (i === 0 && !error) {
             setCurrentStep([...currentStep, response.data]);
-            setCurrentPage((prevState) => prevState + 1);
+            setCurrentPage(currentPage + 1);
           }
         })
         .catch((error) => {
