@@ -83,6 +83,7 @@ function CoursesSteps(props) {
           stepName: props.steps[currentPage]?.stepName,
         })
         .then((response) => {
+          console.log(response);
           let error = false;
           if (response.data.message) {
             error = true;
