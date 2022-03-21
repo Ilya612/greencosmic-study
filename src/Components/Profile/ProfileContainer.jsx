@@ -10,10 +10,11 @@ import {
   setLinkFacebook,
   setLinkLinkedIn,
   setLinkInstagram,
+  setUserName,
 } from "../../Redux/Reducers/userReducer.js";
 class ProfileContainer extends React.Component {
   componentDidMount() {
-    loading(true);
+    this.props.loading(true);
     $api
       .post("/user-information")
       .then((res) => {
@@ -35,6 +36,9 @@ class ProfileContainer extends React.Component {
         if (res.data?.linkInstagram) {
           this.props.setLinkInstagram(res.data.linkInstagram);
         }
+      })
+      .finally(() => {
+        this.props.loading(false);
       })
       .catch((error) => {
         console.log(error);
@@ -69,6 +73,7 @@ const mapDispatchToProps = (dispatch) => {
     setLinkFacebook: (value) => dispatch(setLinkFacebook(value)),
     setLinkLinkedIn: (value) => dispatch(setLinkLinkedIn(value)),
     setLinkInstagram: (value) => dispatch(setLinkInstagram(value)),
+    setUserName: (value) => dispatch(setUserName(value)),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(ProfileContainer);
