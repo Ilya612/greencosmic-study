@@ -1,5 +1,5 @@
 import style from "./types.module.css";
-import Plyr from "plyr-react";
+//import Plyr from "plyr-react";
 //import "plyr-react/dist/plyr.css";
 function descriptionVideo(props) {
   let videoId = props.stepContent.split("=")[1].split("&")[0];
