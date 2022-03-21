@@ -96,6 +96,7 @@ class ProfileContainer extends React.Component {
   render() {
     return (
       <Profile
+        saveChanges={this.saveChanges}
         username={this.props.state.user.username}
         birthday={this.props.state.user.birthday}
         phoneNumber={this.props.state.user.phoneNumber}
