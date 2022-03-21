@@ -72,7 +72,7 @@ function CoursesSteps(props) {
   }, [props.auth, props.currentLessonName]);
 
   useEffect(() => {
-    if (props.steps.length > 0 && currentStep.length < totalCount) {
+    if (props.steps.length > 0 && currentPage <= totalCount) {
       const { search } = history.location;
       const parsed = queryString.parse(search);
 

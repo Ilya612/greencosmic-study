@@ -2,7 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import $api from "../../Http/index.js";
 import { setUser, setClientSecret } from "../../Redux/Reducers/userReducer.js";
-import { loading, setStatusCode } from "../../Redux/Reducers/loadingReducer.js";
+import {
+  loading,
+  setStatusCode,
+  setWrongAuth,
+} from "../../Redux/Reducers/loadingReducer.js";
 import Authentication from "./Authentication.jsx";
 import Preloader from "../../Assets/Preloader/PreloaderPage.jsx";
 import { Redirect } from "react-router-dom";
@@ -10,6 +14,8 @@ import { Redirect } from "react-router-dom";
 class AuthenticationContainer extends React.Component {
   registration = ({ username, password, email }) => {
     // this.props.loading(true);
+    this.props.loading(true);
+    this.props.setWrongAuth(false);
     $api
       .post("/registration", { email, password, username })
       .then((response) => {
@@ -28,12 +34,15 @@ class AuthenticationContainer extends React.Component {
           "top=20",
         ]);*/
         // this.props.setClientSecret(response)
-        localStorage.setItem("client_secret", response.data.client_secret);
 
+        localStorage.setItem("client_secret", response.data.client_secret);
         this.props.setClientSecret(response.data.client_secret);
+      })
+      .finally(() => {
         this.props.loading(false);
       })
       .catch((error) => {
+        this.props.setWrongAuth(true);
         this.props.loading(false);
         console.log(error);
       });
@@ -49,6 +58,7 @@ class AuthenticationContainer extends React.Component {
           <Preloader />
         ) : (
           <Authentication
+            wrongAuth={this.props.state.isLoading.wrongAuth}
             state={this.props.state}
             registration={this.registration}
           />
@@ -69,6 +79,7 @@ const mapDispatchToProps = (dispatch) => {
     loading: (isLoading) => dispatch(loading(isLoading)),
     setStatusCode: (value) => dispatch(setStatusCode(value)),
     setClientSecret: (value) => dispatch(setClientSecret(value)),
+    setWrongAuth: (value) => dispatch(setWrongAuth(value)),
   };
 };
 export default connect(

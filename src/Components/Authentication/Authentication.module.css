@@ -4,6 +4,12 @@
     padding-top: 2em;
     background-color: whitesmoke;
   }
+  .wrongAuth {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(255, 219, 219);
+    color: brown;
+  }
   .img {
     display: flex;
     width: 100%;
@@ -32,6 +38,7 @@
 
     max-width: 30em;
   }
+
   input {
     height: 30px;
     text-decoration: none;
@@ -122,6 +129,12 @@
     justify-content: start;
     padding-top: 4em;
     background-color: whitesmoke;
+  }
+  .wrongAuth {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(255, 219, 219);
+    color: brown;
   }
   .img {
     width: 30em;
