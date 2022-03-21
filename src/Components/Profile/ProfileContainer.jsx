@@ -56,7 +56,15 @@ class ProfileContainer extends React.Component {
   }) => {
     this.props.loading(true);
     $api
-      .post()
+      .post("/set-user-information", {
+        username,
+        city,
+        phoneNumber,
+        birthday,
+        linkFacebook,
+        linkLinkedIn,
+        linkInstagram,
+      })
       .then((res) => {
         if (res.data?.birthday) {
           this.props.setBirthday(res.data.birthday);
