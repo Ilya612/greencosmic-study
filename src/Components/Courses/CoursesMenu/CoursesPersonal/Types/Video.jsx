@@ -31,7 +31,7 @@ function Video(props) {
 export default Video;*/
 import React, { useEffect } from "react";
 import Clappr from "clappr";
-import PlaybackRatePlugin from "clappr-playback-rate-plugin";
+//import PlaybackRatePlugin from "clappr-playback-rate-plugin";
 import ClapprMarkersPlugin from "clappr-markers-plugin";
 
 const ClapprComponent = ({ id, source, mute, height, width }) => {
@@ -44,7 +44,7 @@ const ClapprComponent = ({ id, source, mute, height, width }) => {
       mute,
       height,
       width,
-      plugins: [PlaybackRatePlugin, ClapprMarkersPlugin],
+      plugins: [ClapprMarkersPlugin],
       markersPlugin: {
         markers: [
           new ClapprMarkersPlugin.StandardMarker(0, "The beginning!"),
@@ -52,15 +52,6 @@ const ClapprComponent = ({ id, source, mute, height, width }) => {
           new ClapprMarkersPlugin.StandardMarker(9, "The conclusion."),
         ],
         tooltipBottomMargin: 17, // optional
-      },
-      playbackRateConfig: {
-        defaultValue: 1,
-        options: [
-          { value: 0.5, label: "0.5x" },
-          { value: 1, label: "1x" },
-          { value: 2, label: "2x" },
-        ],
-        // rateSuffix: 'x',
       },
     });
 
