@@ -17,7 +17,7 @@ function Login(props) {
             {!props.wrongAuth ? (
               <div></div>
             ) : (
-              <div>Wrong email or password</div>
+              <div className={style.wrongAuth}>Wrong email or password</div>
             )}
             <div className={style.input}>
               <div className={style.inputContainer}>

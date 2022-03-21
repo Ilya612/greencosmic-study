@@ -106,7 +106,15 @@ function Profile(props) {
               <div className={style.buttonContainer}>
                 <button
                   onClick={() => {
-                    props.saveChanges({});
+                    props.saveChanges({
+                      username,
+                      city,
+                      phoneNumber,
+                      birthday,
+                      linkFacebook,
+                      linkLinkedIn,
+                      linkInstagram,
+                    });
                   }}
                   className={style.button}
                 >

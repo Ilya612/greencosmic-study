@@ -45,7 +45,46 @@ class ProfileContainer extends React.Component {
         console.log(error);
       });
   }
-  saveChanges = () => {};
+  saveChanges = ({
+    username,
+    city,
+    phoneNumber,
+    birthday,
+    linkFacebook,
+    linkLinkedIn,
+    linkInstagram,
+  }) => {
+    this.props.loading(true);
+    $api
+      .post()
+      .then((res) => {
+        if (res.data?.birthday) {
+          this.props.setBirthday(res.data.birthday);
+        }
+        if (res.data?.phoneNumber) {
+          this.props.setPhoneNumber(res.data.phoneNumber);
+        }
+        if (res.data?.city) {
+          this.props.setCity(res.data.city);
+        }
+        if (res.data?.linkFacebook) {
+          this.props.setLinkFacebook(res.data.linkFacebook);
+        }
+        if (res.data?.linkLinkedIn) {
+          this.props.setLinkLinkedIn(res.data.linkLinkedIn);
+        }
+        if (res.data?.linkInstagram) {
+          this.props.setLinkInstagram(res.data.linkInstagram);
+        }
+        console.log(res);
+      })
+      .finally(() => {
+        this.props.loading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   render() {
     return (
       <Profile
