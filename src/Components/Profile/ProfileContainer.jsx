@@ -36,6 +36,7 @@ class ProfileContainer extends React.Component {
         if (res.data?.linkInstagram) {
           this.props.setLinkInstagram(res.data.linkInstagram);
         }
+        console.log(res);
       })
       .finally(() => {
         this.props.loading(false);
