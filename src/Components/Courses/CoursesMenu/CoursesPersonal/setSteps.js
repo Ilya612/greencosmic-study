@@ -3,10 +3,6 @@ import $api from "../../../../Http/index.js";
 
 import { setSteps } from "../../../../Redux/Reducers/coursesReducer.js";
 function changeStepsArray(courseName, lessonName) {
-  console.log("Внутри API");
-  console.log(courseName);
-  console.log(lessonName);
-  console.log("Внутри API");
   $api
     .post("/course/steps", {
       courseName,

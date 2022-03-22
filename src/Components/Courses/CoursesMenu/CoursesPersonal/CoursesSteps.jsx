@@ -21,8 +21,9 @@ function CoursesSteps(props) {
   const [initialPath, setInitialPath] = useState(true);
   const [block, setBlock] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [totalCount, setTotalCount] = useState(0);
 
-  const totalCount = props.steps.length;
+  //const totalCount = props.steps.length;
   const history = useHistory();
 
   useEffect(() => {
@@ -74,6 +75,7 @@ function CoursesSteps(props) {
   }, [props.auth, props.currentLessonName]);
 
   useEffect(() => {
+    setTotalCount(props.steps.length);
     if (props.steps.length > 0 && currentPage <= totalCount) {
       const { search } = history.location;
       const parsed = queryString.parse(search);
@@ -161,7 +163,6 @@ function CoursesSteps(props) {
           if (isLoading) {
             return <Preloader />;
           }
-
           return step;
         })}
         {totalCount !== 0 &&
