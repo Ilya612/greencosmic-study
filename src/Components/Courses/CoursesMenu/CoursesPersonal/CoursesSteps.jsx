@@ -76,7 +76,11 @@ function CoursesSteps(props) {
 
   useEffect(() => {
     //setTotalCount(props.steps.length);
-    if (props.steps.length > 0 && currentPage <= props.steps?.length) {
+    if (
+      !isLoading &&
+      props.steps.length > 0 &&
+      currentPage <= props.steps?.length
+    ) {
       const { search } = history.location;
       const parsed = queryString.parse(search);
       setIsLoading(true);
