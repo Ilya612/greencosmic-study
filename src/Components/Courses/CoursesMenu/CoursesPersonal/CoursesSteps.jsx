@@ -7,6 +7,7 @@ import Img from "./Types/Img";
 import Button from "./Types/Button.jsx";
 import Test from "./Types/Test";
 import queryString, { parse } from "query-string";
+import Preloader from "../../../../Assets/Preloader/PreloaderPage.jsx";
 
 import { useHistory } from "react-router-dom";
 import changeStepsArray from "./setSteps.js";
@@ -19,6 +20,7 @@ function CoursesSteps(props) {
   const [button, setButton] = useState(false);
   const [initialPath, setInitialPath] = useState(true);
   const [block, setBlock] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const totalCount = props.steps.length;
   const history = useHistory();
@@ -75,7 +77,7 @@ function CoursesSteps(props) {
     if (props.steps.length > 0 && currentPage <= totalCount) {
       const { search } = history.location;
       const parsed = queryString.parse(search);
-
+      setIsLoading(true);
       $api
         .post("/course/one-step", {
           courseName: parsed.course_name,
@@ -106,6 +108,9 @@ function CoursesSteps(props) {
             setCurrentPage(currentPage + 1);
           }
         })
+        .finally(() => {
+          setIsLoading(false);
+        })
         .catch((error) => {
           console.log(error);
         });
@@ -116,6 +121,9 @@ function CoursesSteps(props) {
     <div>
       <div id="content">
         {currentStep.map((step, index) => {
+          if (isLoading) {
+            return <Preloader />;
+          }
           if (step.stepType === "Test") {
             return (
               <Test

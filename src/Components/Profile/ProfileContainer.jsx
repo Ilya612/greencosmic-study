@@ -1,6 +1,7 @@
 import React from "react";
 import $api from "../../Http/index.js";
 import Profile from "./Profile.jsx";
+import Preloader from "../../Assets/Preloader/PreloaderPage.jsx";
 import { connect } from "react-redux";
 import { loading } from "../../Redux/Reducers/loadingReducer.js";
 import {
@@ -95,16 +96,22 @@ class ProfileContainer extends React.Component {
   };
   render() {
     return (
-      <Profile
-        saveChanges={this.saveChanges}
-        username={this.props.state.user.username}
-        birthday={this.props.state.user.birthday}
-        phoneNumber={this.props.state.user.phoneNumber}
-        city={this.props.state.user.city}
-        linkFacebook={this.props.state.user.linkFacebook}
-        linkLinkedIn={this.props.state.user.linkLinkedIn}
-        linkInstagram={this.props.state.user.linkInstagram}
-      />
+      <>
+        {this.props.state.isLoading.isLoading ? (
+          <Preloader />
+        ) : (
+          <Profile
+            saveChanges={this.saveChanges}
+            username={this.props.state.user.username}
+            birthday={this.props.state.user.birthday}
+            phoneNumber={this.props.state.user.phoneNumber}
+            city={this.props.state.user.city}
+            linkFacebook={this.props.state.user.linkFacebook}
+            linkLinkedIn={this.props.state.user.linkLinkedIn}
+            linkInstagram={this.props.state.user.linkInstagram}
+          />
+        )}
+      </>
     );
   }
 }
