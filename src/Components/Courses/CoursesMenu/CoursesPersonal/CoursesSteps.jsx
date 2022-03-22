@@ -121,9 +121,6 @@ function CoursesSteps(props) {
     <div>
       <div id="content">
         {currentStep.map((step, index) => {
-          if (isLoading) {
-            return <Preloader />;
-          }
           if (step.stepType === "Test") {
             return (
               <Test
@@ -160,6 +157,9 @@ function CoursesSteps(props) {
                 stepContent={step.stepContent}
               />
             );
+          }
+          if (isLoading) {
+            return <Preloader />;
           }
 
           return step;
