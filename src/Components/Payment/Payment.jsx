@@ -11,7 +11,7 @@ import $api from "../../Http";
 // recreating the Stripe object on every render.
 // This is your test publishable API key.
 const stripePromise = loadStripe(
-  "pk_test_51KRcjgF95E6xGFpDKlYkxIoVMeQKAkNQ93qXu9tBJIrv3PqQ4oQD6PfG9Bb9xJtRSYf3hL4olUhAlk9JcGdtdMK1004ps5RQvv"
+  "pk_live_51KfiHzAd95fmFuDbKh2ay0TruyFg8o6yQq1xPvmveKMuQbbBr8oLs0nZlLwGIzYi4nI4pPaxfOC2Rpcjx964udQo00dOD3Qk9B"
 );
 
 export default function Payment(props) {
