@@ -79,7 +79,7 @@ function CoursesSteps(props) {
     if (props.steps.length > 0 && currentPage <= props.steps?.length) {
       const { search } = history.location;
       const parsed = queryString.parse(search);
-
+      setIsLoading(true);
       $api
         .post("/course/one-step", {
           courseName: parsed.course_name,
@@ -110,7 +110,9 @@ function CoursesSteps(props) {
             setCurrentPage(currentPage + 1);
           }
         })
-        .finally(() => {})
+        .finally(() => {
+          setIsLoading(false);
+        })
         .catch((error) => {
           console.log(error);
         });
@@ -158,7 +160,9 @@ function CoursesSteps(props) {
               />
             );
           }
-
+          if (isLoading) {
+            return <Preloader />;
+          }
           return step;
         })}
         {totalCount !== 0 &&
