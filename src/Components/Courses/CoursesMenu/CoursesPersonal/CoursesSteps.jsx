@@ -162,7 +162,8 @@ function CoursesSteps(props) {
           return step;
         })}
         {totalCount !== 0 &&
-        (totalCount === currentPage || totalCount < currentPage) &&
+        (props.steps?.length === currentPage ||
+          props.steps?.length < currentPage) &&
         !button &&
         !block ? (
           <Button
