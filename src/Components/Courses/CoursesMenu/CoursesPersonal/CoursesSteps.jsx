@@ -76,11 +76,7 @@ function CoursesSteps(props) {
 
   useEffect(() => {
     //setTotalCount(props.steps.length);
-    if (
-      !isLoading &&
-      props.steps.length > 0 &&
-      currentPage <= props.steps?.length
-    ) {
+    if (props.steps.length > 0 && currentPage <= props.steps?.length) {
       const { search } = history.location;
       const parsed = queryString.parse(search);
       setIsLoading(true);
@@ -164,12 +160,11 @@ function CoursesSteps(props) {
               />
             );
           }
-          if (isLoading) {
-            return <Preloader />;
-          }
+
           return step;
         })}
-        {totalCount !== 0 &&
+        {isLoading ? <Preloader /> : <></>}
+        {props.steps?.length !== 0 &&
         (props.steps?.length === currentPage ||
           props.steps?.length < currentPage) &&
         !button &&
