@@ -150,6 +150,20 @@ function CoursesSteps(props) {
             );
           }
           if (step.stepType === "Video") {
+            /*const id =
+              props.stepContent !== ""
+                ? props.stepContent.split("=")[1].split("&")[0]
+                : "7MJBeAyU1As";
+            const src = "https://https://www.youtube.com/embed/" + id;
+
+            const videoSrc = {
+              sources: [
+                {
+                  src: src,
+                  provider: "youtube",
+                },
+              ],
+            };*/
             return (
               <Video
                 key={index}

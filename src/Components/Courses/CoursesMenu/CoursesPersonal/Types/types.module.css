@@ -25,6 +25,7 @@
 .videoContainer {
   background-color: whitesmoke;
 }
+
 .buttonContainer {
   display: flex;
   justify-content: start;
