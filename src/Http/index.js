@@ -1,7 +1,7 @@
 import * as axios from "axios";
 import store from "../Redux/reduxStore.js";
 import { refreshToken, isAuth } from "../Redux/Reducers/userReducer.js";
-export const API_URL = "https://greencosmic-api-private.vercel.app/api";
+export const API_URL = "http://localhost:3002/api";
 
 axios.defaults.withCredentials = true;
 
@@ -15,7 +15,7 @@ const $api = axios.create({
  */
 $api.interceptors.request.use((config) => {
   config.headers.Authorization = "Bearer " + localStorage.getItem("token");
-  console.log(config.headers);
+  console.log(config);
 
   return config;
 });

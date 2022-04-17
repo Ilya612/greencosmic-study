@@ -10,6 +10,7 @@ import {
 } from "../../../Redux/Reducers/coursesReducer.js";
 import Preloader from "../../../Assets/Preloader/PreloaderPage.jsx";
 import style from "./Courses.module.css";
+import { Redirect } from "react-router-dom";
 class CoursesMenuContainer extends React.Component {
   componentDidMount() {
     this.props.loading(true);
@@ -28,6 +29,9 @@ class CoursesMenuContainer extends React.Component {
   }
 
   render() {
+    if (!localStorage.getItem("token")) {
+      return <Redirect to="/" />;
+    }
     return (
       <div className={style.container}>
         {this.props.state.isLoading.isLoading ? (

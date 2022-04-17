@@ -19,6 +19,11 @@ function Profile(props) {
           <div className={style.login_container}>
             <div className={style.registration}>
               <div className={style.title}>Profile</div>
+              <div className={style.buttonContainer}>
+                <button onClick={props.logout} className={style.button}>
+                  Logout
+                </button>
+              </div>
               <div className={style.input}>
                 <div>Username</div>
                 <div className={style.inputContainer}>
@@ -102,6 +107,7 @@ function Profile(props) {
                     />
                   </div>
                 </div>
+
                 <div className={style.buttonContainer}>
                   <button
                     onClick={() => {

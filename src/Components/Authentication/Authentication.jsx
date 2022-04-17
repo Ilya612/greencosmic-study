@@ -1,5 +1,5 @@
 import style from "./Authentication.module.css";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import CheckEmail from "./CheckEmail";
@@ -9,6 +9,21 @@ function Authentication(props) {
   const [username, setUsername] = useState(""); // '' is the initial state value
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const enterHandler = (e) => {
+    if (e.key === "Enter") {
+      props.registration({
+        email,
+        username: email.split("@")[0],
+        password,
+      });
+    }
+  };
+  useEffect(() => {
+    document.addEventListener("keyup", enterHandler);
+    return function () {
+      document.removeEventListener("keyup", enterHandler);
+    };
+  });
   return (
     <div className={style.container}>
       <div>
@@ -16,7 +31,9 @@ function Authentication(props) {
           <div className={style.customContainer}>
             <div className={style.login_container}>
               <div className={style.registration}>
-                <div className={style.title}>Create your profile</div>
+                <div className={style.title}>
+                  Before you start, you need to create an account
+                </div>
                 {!props.wrongAuth ? (
                   <div></div>
                 ) : (
@@ -25,17 +42,6 @@ function Authentication(props) {
                   </div>
                 )}
                 <div className={style.input}>
-                  <div className={style.inputContainer}>
-                    <div className={style.customInput}>
-                      <input
-                        value={username}
-                        onInput={(evt) => setUsername(evt.target.value)}
-                        type="text"
-                        placeholder="Username"
-                      />
-                    </div>
-                  </div>
-
                   <div className={style.inputContainer}>
                     <div className={style.customInput}>
                       <input
@@ -51,8 +57,12 @@ function Authentication(props) {
                     <div className={style.customInput}>
                       <input
                         value={password}
-                        onInput={(evt) => setPassword(evt.target.value)}
-                        type="text"
+                        onInput={(evt) => {
+                          if (password.length <= 7) {
+                            setPassword(evt.target.value);
+                          }
+                        }}
+                        type="password"
                         placeholder="Password"
                       />
                     </div>
@@ -60,11 +70,13 @@ function Authentication(props) {
                   <div className={style.buttonContainer}>
                     <button
                       onClick={() => {
-                        props.registration({
-                          email,
-                          username,
-                          password,
-                        });
+                        if (password.length === 7) {
+                          props.registration({
+                            email,
+                            username: email.split("@")[0],
+                            password,
+                          });
+                        }
                       }}
                       className={style.button}
                     >

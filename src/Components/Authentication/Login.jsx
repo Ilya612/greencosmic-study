@@ -33,9 +33,14 @@ function Login(props) {
               <div className={style.inputContainer}>
                 <div className={style.customInput}>
                   <input
+                    type="password"
                     value={password}
-                    onInput={(evt) => setPassword(evt.target.value)}
-                    type="text"
+                    onInput={(evt) => {
+                      evt.preventDefault();
+                      if (password.length <= 7) {
+                        setPassword(evt.target.value);
+                      }
+                    }}
                     placeholder="Password"
                   />
                 </div>

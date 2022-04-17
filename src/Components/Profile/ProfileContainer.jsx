@@ -4,6 +4,7 @@ import Profile from "./Profile.jsx";
 import Preloader from "../../Assets/Preloader/PreloaderPage.jsx";
 import { connect } from "react-redux";
 import { loading } from "../../Redux/Reducers/loadingReducer.js";
+import { Redirect } from "react-router-dom";
 import {
   setBirthday,
   setPhoneNumber,
@@ -94,13 +95,35 @@ class ProfileContainer extends React.Component {
         console.log(error);
       });
   };
+  logout = () => {
+    console.log(this.props);
+    this.props.loading(true);
+
+    $api
+      .post("/logout")
+      .then((res) => {
+        console.log(res);
+        localStorage.clear();
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        this.props.loading(false);
+      });
+  };
   render() {
+    console.log(!localStorage.getItem("token"));
+    if (!localStorage.getItem("token")) {
+      return <Redirect to="/" />;
+    }
     return (
-      <>
+      <div>
         {this.props.state.isLoading.isLoading ? (
           <Preloader />
         ) : (
           <Profile
+            logout={this.logout}
             saveChanges={this.saveChanges}
             username={this.props.state.user.username}
             birthday={this.props.state.user.birthday}
@@ -111,7 +134,7 @@ class ProfileContainer extends React.Component {
             linkInstagram={this.props.state.user.linkInstagram}
           />
         )}
-      </>
+      </div>
     );
   }
 }
