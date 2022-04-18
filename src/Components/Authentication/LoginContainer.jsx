@@ -9,6 +9,8 @@ import { Redirect } from "react-router-dom";
 
 class LoginContainer extends React.Component {
   login = ({ password, email }) => {
+    console.log(password);
+    console.log(email);
     this.props.loading(true);
     $api
       .post("/login", { email, password })
